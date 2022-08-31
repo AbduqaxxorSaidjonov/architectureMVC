@@ -7,20 +7,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeView {
+class HomeViewController: UIViewController {
     
-    var presenter: HomePresenter!
     var id = 20
- 
-    
-    func onLoadPosts(posts: [Post]) {
-        if posts.count > 0 {
-            print(posts.count)
-        }else{
-            //error
-        }
-    }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +18,66 @@ class HomeViewController: UIViewController, HomeView {
 
     
     func initViews(){
-        presenter = HomePresenter()
-        presenter.homeView = self
-        presenter.apiPostList()
-        presenter.apiPostSingle(id: id)
-        presenter.apiPostCreate(post: Post(title: "PDP", body: "Academy"))
-        presenter.apiPostDelete(post: Post(title: "PDP1", body: "Academy1"))
-        presenter.apiPostUpdate(post: Post(title: "PDP1", body: "Academy1"))
-        
+        apiPostList()
+        apiPostSingle(id: id)
+        apiPostCreate(post: Post(title: "PDP", body: "Academy"))
+        apiPostDelete(post: Post(title: "PDP1", body: "Academy1"))
+        apiPostUpdate(post: Post(title: "PDP1", body: "Academy1"))
+
+    }
+    
+    func apiPostList(){
+        AFHttp.get(url: AFHttp.API_POST_LIST, params: AFHttp.paramsEmpty(), handler: {response in
+            switch response.result{
+            case .success:
+                print(response.result)
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    func apiPostSingle(id: Int){
+        AFHttp.get(url: AFHttp.API_POST_SINGLE + String(id), params: AFHttp.paramsEmpty(), handler: {response in
+            switch response.result{
+            case .success:
+                print(response.result)
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    func apiPostCreate(post: Post) {
+        AFHttp.post(url: AFHttp.API_POST_CREATE, params: AFHttp.paramsPostCreate(post: post), handler: {response in
+            switch response.result{
+            case .success:
+                print(response.result)
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    func apiPostDelete(post: Post) {
+        AFHttp.del(url: AFHttp.API_POST_DELETE + String(post.id!), params: AFHttp.paramsEmpty(), handler: {response in
+            switch response.result{
+            case .success:
+                print(response.result)
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    func apiPostUpdate(post: Post) {
+        AFHttp.put(url: AFHttp.API_POST_UPDATE + String(post.id!), params: AFHttp.paramsPostUpdate(post: post), handler: {response in
+            switch response.result{
+            case .success:
+                print(response.result)
+            case let .failure(error):
+                print(error)
+            }
+        })
     }
 }

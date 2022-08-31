@@ -22,8 +22,6 @@
 		76472A8B28BB6A2E000E361E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76472A8A28BB6A2E000E361E /* Post.swift */; };
 		7686217E28BE019F00018643 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686217C28BE019F00018643 /* HomeViewController.swift */; };
 		7686217F28BE019F00018643 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7686217D28BE019F00018643 /* HomeViewController.xib */; };
-		7686218228BE01C900018643 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686218128BE01C900018643 /* HomeView.swift */; };
-		7686218428BE01D600018643 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686218328BE01D600018643 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +60,6 @@
 		76472A8A28BB6A2E000E361E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7686217C28BE019F00018643 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7686217D28BE019F00018643 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		7686218128BE01C900018643 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		7686218328BE01D600018643 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,20 +170,10 @@
 		7686217B28BE017500018643 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				7686218028BE01B800018643 /* presenter */,
 				7686217C28BE019F00018643 /* HomeViewController.swift */,
 				7686217D28BE019F00018643 /* HomeViewController.xib */,
 			);
 			path = screens;
-			sourceTree = "<group>";
-		};
-		7686218028BE01B800018643 /* presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7686218128BE01C900018643 /* HomeView.swift */,
-				7686218328BE01D600018643 /* HomePresenter.swift */,
-			);
-			path = presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +319,6 @@
 				76472A5028BB63C6000E361E /* AppDelegate.swift in Sources */,
 				76472A8B28BB6A2E000E361E /* Post.swift in Sources */,
 				76472A5A28BB63C6000E361E /* architectureMVP.xcdatamodeld in Sources */,
-				7686218228BE01C900018643 /* HomeView.swift in Sources */,
-				7686218428BE01D600018643 /* HomePresenter.swift in Sources */,
 				7686217E28BE019F00018643 /* HomeViewController.swift in Sources */,
 				76472A5228BB63C6000E361E /* SceneDelegate.swift in Sources */,
 			);
